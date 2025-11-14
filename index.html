@@ -3,19 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Splash</title>
+    <title>Checklist</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="min-h-screen bg-gray-50">
-    <div class="container mx-auto px-4 py-20">
-        <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden p-8 text-center">
-            <h1 class="text-3xl font-bold text-gray-800 mb-6">Checklist App</h1>
-            <p class="text-gray-600 mb-8">A simple checklist for your daily tasks</p>
-            <a href="/checklist.html" class="px-6 py-3 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
-                Go to Checklist
-            </a>
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold text-gray-800 mb-6">Daily Checklist</h1>
+                <div class="progress-container">
+                    <div class="flex justify-between mb-2">
+                        <span class="font-medium">Progress: <span id="progress-percent">0</span>%</span>
+                        <span id="completed-count">0</span>/<span id="total-count">0</span> tasks
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill" style="width: 0%"></div>
+                    </div>
+                </div>
+                <div class="text-center mb-4">
+                    <button id="checkout-btn" class="checkout-btn" disabled>
+                        Check Out
+                    </button>
+                </div>
+<div id="checklist-container" class="space-y-2">
+                    <checklist-item text="Update Assign & Tracking sheet" completed="false" data-link="https://docs.google.com/spreadsheets/d/CTG_Division_Working_Sheets"></checklist-item>
+                    <checklist-item text="Daily Hold and RTO Verification" completed="false" data-link="https://docs.google.com/spreadsheets/d/Return_Verification_Hub_Review_August_2025"></checklist-item>
+                    <checklist-item text="Check Mail Inbox" completed="false" data-link="https://mail.google.com"></checklist-item>
+                    <checklist-item text="Escalation Tracker" completed="false" data-link="https://docs.google.com/spreadsheets/d/OSD_Escalation_Tracker"></checklist-item>
+                    <checklist-item text="OSD Aging Sheet Feedback & Take Action" completed="false" data-link="https://docs.google.com/spreadsheets/d/OSD_Aging_Issue_Resolution_Tracker"></checklist-item>
+                    <checklist-item text="Check in" completed="false" data-link="https://chat.whatsapp.com/Hub_Group"></checklist-item>
+                    <checklist-item text="Web Attendence & Sheet Attendence" completed="false" data-link="https://attendance.example.com"></checklist-item>
+                    <checklist-item text="Check Cartup Revers Pickup Sheet" completed="false" data-link="https://docs.google.com/spreadsheets/d/Customer_Return_CB2_Cartup"></checklist-item>
+                    <checklist-item text="Recognize Hub Backlogs" completed="false" data-link="https://docs.google.com/spreadsheets/d/Backlog_Management_CTG_Division"></checklist-item>
+                    <checklist-item text="Submit Hub Payment" completed="false" data-link="https://docs.google.com/spreadsheets/d/Hub_Payment"></checklist-item>
+                    <checklist-item text="Return Verification Sheet Feedback (Ops Audit)" completed="false" data-link="https://docs.google.com/spreadsheets/d/Return_Verification_Hub_Review_August_2025"></checklist-item>
+                    <checklist-item text="Give Feedback in Internal Audit Sheet" completed="false" data-link="https://docs.google.com/spreadsheets/d/Internal_Audit_25_CTG_Division"></checklist-item>
+                    <checklist-item text="Reverse Parcel Processing" completed="false"></checklist-item>
+                    <checklist-item text="Check Pickup Request" completed="false"></checklist-item>
+                    <checklist-item text="Petty Cash Sheet Update" completed="false" data-link="https://docs.google.com/spreadsheets/d/CTG_Division_Working_Sheets"></checklist-item>
+                    <checklist-item text="Share daily closing report in the respective group" completed="false" data-link="https://chat.whatsapp.com/Hub_Group"></checklist-item>
+                    <checklist-item text="Share Daily Hold and RTO Verification Report" completed="false" data-link="https://docs.google.com/spreadsheets/d/Hold_RTO_Varification_Sheet_CTG_Division"></checklist-item>
+                    <checklist-item text="Check Out" completed="false" data-link="https://attendance.example.com"></checklist-item>
+                    <checklist-item text="DA / PRA Onboarding Sheet Update" completed="false" data-link="https://docs.google.com/spreadsheets/d/DA_PRA_Onboarding_Sheet_ISD_OSD"></checklist-item>
+                    <checklist-item text="Incharge and Agent Tracker Sheet Update" completed="false" data-link="https://docs.google.com/spreadsheets/d/In-charge_Agent_Tracker_CarryBee_CTG_DIVISION"></checklist-item>
+                    <checklist-item text="Resource Update" completed="false" data-link="https://docs.google.com/spreadsheets/d/Resource_Count_CTG_Division"></checklist-item>
+                    <checklist-item text="Hub Change" completed="false"></checklist-item>
+                    <checklist-item text="Line Haul Van Arrival" completed="false" data-link="https://docs.google.com/spreadsheets/d/Line_Haul_Van_Arrival_OSD_Nov_25"></checklist-item>
+                </div>
+<div class="mt-6 flex space-x-2">
+                    <input type="text" id="new-item" placeholder="Add new item" 
+                           class="flex-grow px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <button id="add-btn" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                        Add
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
-<script src="https://huggingface.co/deepsite/deepsite-badge.js"></script>
+    <script src="components/checklist-item.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
